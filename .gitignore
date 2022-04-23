@@ -14,7 +14,7 @@
 *.DS_Store
 
 # Idea
-.idea/
+.idea/*
 target/
 
 # Package Files #
