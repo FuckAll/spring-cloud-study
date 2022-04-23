@@ -14,7 +14,8 @@
 *.DS_Store
 
 # Idea
-*.ids
+.idea/
+target/
 
 # Package Files #
 *.jar
