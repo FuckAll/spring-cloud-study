@@ -3,6 +3,9 @@ package xyz.izgnod.order.service;
 import xyz.izgnod.inventory.api.InventoryApi;
 import org.springframework.cloud.openfeign.FeignClient;
 
+/**
+ * @author izgnod
+ */
 @FeignClient(value = "inventory-service")
 public interface InventoryService extends InventoryApi {
 

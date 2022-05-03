@@ -11,8 +11,8 @@ public class InventoryService implements InventoryApi {
     public String deductStock(@PathVariable("productId") Long productId,
                               @PathVariable("stock") Long stock) {
         System.out.println("对商品【productId=" + productId + "】扣减库存：" + stock);
-        throw new RuntimeException("fail");
-//        return "{'msg': 'success'}";
+//        throw new RuntimeException("fail");
+        return "{'msg': 'success'}";
     }
 
 }

@@ -8,6 +8,8 @@ spring:
 eureka:
   instance:
     hostname: localhost
+    metadata-map:
+      zone: china
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka

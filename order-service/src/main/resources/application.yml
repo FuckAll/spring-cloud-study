@@ -8,6 +8,8 @@ spring:
 eureka:
   instance:
     hostname: localhost
+    metadata-map:
+      zone: china
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
@@ -16,15 +18,15 @@ eureka:
 logging.level.com.zhss.order.service.InventoryService: DEBUG
 
 ########## ribbon 配置重试  ##############3
-inventory-service:
-  ribbon:
-    ConnectTimeout: 3000
-    ReadTimeout: 6000
-    MaxAutoRetries: 2
-    MaxAutoRetriesNextServer: 0
-    retryableStatusCodes: 500,408
-    OkToRetryOnAllOperations: true
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#inventory-service:
+#  ribbon:
+#    ConnectTimeout: 3000
+#    ReadTimeout: 6000
+#    MaxAutoRetries: 2
+#    MaxAutoRetriesNextServer: 0
+#    retryableStatusCodes: 500,408
+#    OkToRetryOnAllOperations: true
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 
 ########## ribbon 不与eureka同时使用； ##########
 #inventory-service:
