@@ -25,6 +25,8 @@
         <module>wms-service</module>
         <module>eureka-server</module>
         <module>zuul-gateway</module>
+        <module>upload-file-api</module>
+        <module>upload-file-service</module>
     </modules>
 
 </project>

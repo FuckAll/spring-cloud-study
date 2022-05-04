@@ -1,0 +1,30 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: upload-service
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+eureka:
+  instance:
+    hostname: localhost
+    metadata-map:
+      zone: china
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+logging.level.com.zhss.order.service.InventoryService: DEBUG
+
+feign:
+  client:
+    config:
+      inventory-service:
+        loggerLevel: full
+
+logging:
+  level: debug

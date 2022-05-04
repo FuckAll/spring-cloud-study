@@ -5,6 +5,12 @@ spring:
   application:
     name: zuul-gateway
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 eureka:
   instance:
     hostname: localhost
@@ -13,9 +19,31 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false
 
 zuul:
+  #  ignored-services: '*' #由于用eureka之后，服务是自动发现的，这里可以选择关闭自动发现，只暴露需要暴露的服务；
   retryable: true
   routes:
     order-service:
       path: /order/**
+    credit-service:
+      path: /credit/**
+#      url: forward:/crd
+    upload-service:
+      path: /upload/**
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+
+#logging:
+#  level:
+#    com.netflix: DEBUG
